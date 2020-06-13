@@ -1,9 +1,80 @@
+body {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  position: relative;
+  background-color: #313131;
+  overflow: hidden;
+}
+
 .grid {
   width: 200px;
   height: 200px;
   display: flex;
   flex-wrap: wrap;
   border-style: solid;
+  border-color: #313131;
+  background-color: rgb(255, 159, 159);
+}
+
+.grid:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  background-color: rgb(255, 159, 159);
+  height: 40%;
+  z-index: -2;
+  transform: translate(-50%, -50%) skewX(-35deg) rotate(-10deg);
+}
+
+button {
+  font-size: 26px;
+  padding: 10px 30px;
+  background-color: rgb(255, 159, 159);
+  border-width: 3px;
+  border-color: #313131;
+  border-style: solid;
+  cursor: pointer;
+  color: #313131;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.3s ease-in;
+}
+
+button:hover {
+  font-size: 26px;
+  padding: 10px 50px;
+  background-color: rgb(255, 159, 159);
+  border-width: 3px;
+  border-color: #313131;
+  border-style: solid;
+  cursor: pointer;
+  color: #313131;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  position: relative;
+}
+
+button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  background-color: #313131;
+  height: 110%;
+  transform: translate(-50%, -50%) skewX(-35deg) rotate(-10deg);
+  z-index: -1;
+  transition: all 0.3s ease-in;
 }
 
 .grid div {
@@ -12,8 +83,14 @@
 }
 
 .snake {
-  background-color: limegreen;
+  background-color: #313131;
 }
 .apple {
   background-color: crimson;
+  border-radius: 5px;
+}
+.score {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
 }
